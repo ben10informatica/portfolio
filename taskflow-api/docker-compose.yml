@@ -5,9 +5,9 @@ services:
       - "8000:8000"
     environment:
       SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
-      DATABASE_URL: sqlite:///./taskflow.db
+      DATABASE_URL: sqlite:////data/taskflow.db
     volumes:
-      - taskflow-data:/app
+      - taskflow-data:/data
 
 volumes:
   taskflow-data:
