@@ -1,44 +1,60 @@
-# Portfólio — Projetos Variados
+# Portfólio — João Victor
 
-Coleção de projetos para currículo e vagas **home office**, cobrindo stacks diferentes.
+Projetos para currículo, com foco em vagas remotas.
 
-## Projetos
+## O que tem aqui
 
-| Projeto | Stack | Foco | Pasta |
-|---------|-------|------|-------|
-| **Site Portfólio** | React, TypeScript, Vite | Frontend | [`site/`](./site/) |
-| **TaskFlow API** | Python, FastAPI, JWT, Docker | Backend REST | [`taskflow-api/`](./taskflow-api/) |
-| **AI Workspace** | Python, FastAPI, Groq LLM | IA aplicada | [`ai-workspace/`](./ai-workspace/) |
-| **YouTube Dashboard** | React, TypeScript, Express API | Full-Stack | [`youtube-dashboard/`](./youtube-dashboard/) |
+| Projeto | O que é | Pasta |
+|---------|---------|-------|
+| Site | Landing page em React + TypeScript + Vite | [`site/`](./site/) |
+| TaskFlow API | API de tarefas com JWT, Swagger e Docker | [`taskflow-api/`](./taskflow-api/) |
+| AI Workspace | Chat web com Groq (Llama) | [`ai-workspace/`](./ai-workspace/) |
+| YouTube Dashboard | Painel React para métricas e ideias de conteúdo | [`youtube-dashboard/`](./youtube-dashboard/) |
 
-## Como rodar tudo
+## Como rodar
 
 ```bash
-# 1. Site portfólio
-cd portfolio/site && npm install && npm run dev
-
-# 2. TaskFlow API
-cd portfolio/taskflow-api && pip install -r requirements.txt && uvicorn app.main:app --reload
-
-# 3. AI Workspace
-cd portfolio/ai-workspace && pip install -r requirements.txt && uvicorn app.main:app --reload --port 8001
-
-# 4. YouTube Dashboard (requer API na raiz do repo)
-cd .. && npm run build && npm run server
-cd portfolio/youtube-dashboard && npm install && npm run dev
+git clone https://github.com/ben10informatica/portfolio.git
+cd portfolio
 ```
 
-## Deploy sugerido
+**Site**
 
-| Projeto | Plataforma |
-|---------|------------|
-| Site + YouTube Dashboard | Vercel / Netlify |
-| TaskFlow API + AI Workspace | Railway / Render |
-| YouTube API (raiz) | Railway / Render |
+```bash
+cd site
+npm install
+npm run dev
+```
 
-## Próximos passos
+**TaskFlow API**
 
-- [ ] Subir cada projeto no GitHub (repo separado ou monorepo)
-- [ ] Deploy com link live em cada README
-- [ ] Adicionar screenshot/GIF no README de cada projeto
-- [ ] LinkedIn com 1 post por projeto
+```bash
+cd taskflow-api
+cp .env.example .env
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+**AI Workspace**
+
+```bash
+cd ai-workspace
+cp .env.example .env
+pip install -r requirements.txt
+uvicorn app.main:app --reload --port 8001
+```
+
+**YouTube Dashboard**
+
+```bash
+cd youtube-dashboard
+npm install
+npm run dev
+```
+
+Cada pasta tem o próprio README com mais detalhe.
+
+## Contato
+
+- GitHub: [ben10informatica](https://github.com/ben10informatica)
+- Currículo: [curriculo](https://github.com/ben10informatica/curriculo)

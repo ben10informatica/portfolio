@@ -97,7 +97,7 @@ export const profile = {
     'Busco vaga remota para crescer em time, com código limpo e entrega constante.',
   ],
   email: '',
-  github: 'https://github.com/Miphj',
+  github: 'https://github.com/ben10informatica',
   linkedin: '',
   location: 'Brasil · 100% remoto',
 };

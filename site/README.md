@@ -22,7 +22,7 @@ Acesse `http://localhost:5173`
 Tudo fica em `src/data/projects.ts`:
 
 - Nome, bio e seção Sobre
-- `email`, `github` e `linkedin` — GitHub já aponta para https://github.com/Miphj
+- `email`, `github` e `linkedin` — GitHub já aponta para https://github.com/ben10informatica
 - Lista de projetos
 
 ## Deploy
