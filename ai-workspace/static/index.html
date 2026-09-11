@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Workspace</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>AI Workspace</h1>
+      <p class="subtitle">Assistente para devs · Groq LLM</p>
+      <button id="newChat" class="btn-new">+ Nova conversa</button>
+      <div class="prompts">
+        <p>Sugestões:</p>
+        <button class="prompt-chip" data-prompt="Me ajude a escrever um README profissional para meu projeto">README profissional</button>
+        <button class="prompt-chip" data-prompt="Revise este código e sugira melhorias: function fetchData() { return fetch('/api') }">Revisar código</button>
+        <button class="prompt-chip" data-prompt="Liste 5 ideias de projetos de portfólio para vagas remotas">Ideias de portfólio</button>
+      </div>
+    </aside>
+
+    <main class="chat">
+      <div id="messages" class="messages">
+        <div class="message assistant">
+          <div class="bubble">Olá! Sou seu assistente de produtividade. Como posso ajudar hoje?</div>
+        </div>
+      </div>
+
+      <form id="chatForm" class="input-area">
+        <textarea id="input" rows="2" placeholder="Digite sua mensagem..." required></textarea>
+        <button type="submit" id="sendBtn">Enviar</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>

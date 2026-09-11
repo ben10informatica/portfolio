@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-dev-secret-change-in-production}
+      DATABASE_URL: sqlite:///./taskflow.db
+    volumes:
+      - taskflow-data:/app
+
+volumes:
+  taskflow-data:
