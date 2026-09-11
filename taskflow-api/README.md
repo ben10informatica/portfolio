@@ -33,6 +33,10 @@ uvicorn app.main:app --reload
 
 O login no Swagger usa o fluxo OAuth2 password: em **Authorize**, o campo `username` é o e-mail cadastrado.
 
+## Frontend (local)
+
+Há um cliente React em [`taskflow-web/`](../taskflow-web/). Ele não está publicado: suba esta API na porta 8000 e rode `npm run dev` na pasta do frontend.
+
 ## Docker
 
 ```bash

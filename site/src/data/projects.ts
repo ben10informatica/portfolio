@@ -29,6 +29,36 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'taskflow-web',
+    title: 'TaskFlow Web',
+    description:
+      'Frontend React da TaskFlow API: cadastro, login JWT e CRUD de tarefas. Roda só na máquina local e precisa da API em localhost:8000. Sem deploy de produção.',
+    stack: ['React', 'TypeScript', 'Vite'],
+    category: 'frontend',
+    github: 'https://github.com/dev-joaovictor/portfolio/tree/main/taskflow-web',
+    status: 'ready',
+    highlights: [
+      'Login/cadastro contra a API real',
+      'Listar, criar, editar e apagar tarefas',
+      'Demo local — sem URL pública',
+    ],
+  },
+  {
+    id: 'shortlink',
+    title: 'ShortLink',
+    description:
+      'Encurtador de URLs pequeno e fechado: API FastAPI + SQLite e UI React. Cria código curto, redireciona e conta cliques. Só local, sem login e sem deploy.',
+    stack: ['Python', 'FastAPI', 'SQLite', 'React', 'TypeScript'],
+    category: 'fullstack',
+    github: 'https://github.com/dev-joaovictor/portfolio/tree/main/shortlink',
+    status: 'ready',
+    highlights: [
+      'Health check, criação e redirect 307',
+      'UI mínima para encurtar e copiar o link',
+      'Menor que o TaskFlow — recorte full-stack local',
+    ],
+  },
+  {
     id: 'curriculo-site',
     title: 'Site de Currículo',
     description:
@@ -92,7 +122,7 @@ export const profile = {
   bio: 'Portfólio com APIs em Python/FastAPI e interfaces em React/TypeScript. Busco estágio ou vaga júnior remota para crescer em time e entregar com consistência.',
   about: [
     'Uso TypeScript (React) e Python (FastAPI) nos projetos deste portfólio.',
-    'O recorte mais completo é a TaskFlow API: JWT, CRUD isolado por dono, OpenAPI e Docker.',
+    'O recorte mais completo é o TaskFlow: API FastAPI (JWT, CRUD, OpenAPI, Docker) e um frontend React local.',
     'Busco estágio ou vaga júnior remota, com código claro e feedback de time.',
   ],
   email: 'dev-joaovictor@gmail.com',

@@ -148,8 +148,8 @@ export default function App() {
       <section id="projetos" className="section">
         <h2>Projetos</h2>
         <p className="section-sub">
-          TaskFlow é o recorte backend mais completo. Os demais mostram frontend, um workspace de IA
-          em HTML/JS e um dashboard ainda em evolução.
+          TaskFlow (API + frontend local) é o recorte principal. ShortLink é um full-stack menor.
+          O dashboard do YouTube segue em evolução, sem backend neste repo.
         </p>
         {featured.length > 0 && (
           <div className="featured-grid">

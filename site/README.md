@@ -1,6 +1,6 @@
 # Site Portfólio — João Victor
 
-Landing em React + TypeScript. TaskFlow aparece em destaque; os cards descrevem stack e status reais (o dashboard do YouTube segue como frontend em evolução).
+Landing em React + TypeScript. TaskFlow (API + frontend local) aparece em destaque; ShortLink é um full-stack menor. Os cards descrevem stack e status reais (o dashboard do YouTube segue como frontend em evolução).
 
 ![Screenshot do site](docs/screenshot.png)
 
