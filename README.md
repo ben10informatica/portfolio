@@ -10,6 +10,7 @@ Projetos para currículo, com foco em vagas remotas.
 |---------|------------|
 | Site / Currículo | ![site](site/docs/screenshot.png) |
 | TaskFlow API | ![taskflow](taskflow-api/docs/screenshot.png) |
+| Tip Calculator | ![tip](tip-calculator/docs/screenshot.png) |
 | AI Workspace | ![ai](ai-workspace/docs/screenshot.png) |
 | YouTube Dashboard | ![yt](youtube-dashboard/docs/screenshot.png) |
 

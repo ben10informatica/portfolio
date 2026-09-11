@@ -6,6 +6,7 @@ export interface Project {
   category: 'fullstack' | 'backend' | 'frontend' | 'ai';
   github?: string;
   demo?: string;
+  screenshot?: string;
   highlights: string[];
   featured?: boolean;
   status?: 'ready' | 'wip';
@@ -62,15 +63,16 @@ export const projects: Project[] = [
     id: 'tip-calculator',
     title: 'Tip Calculator',
     description:
-      'Calculadora de gorjeta em React + TypeScript + Vite: valor da conta, percentual (presets ou custom) e divisão por pessoas. Só local — sem backend e sem deploy.',
+      'Calculadora de gorjeta em React + TypeScript + Vite: valor da conta, percentual (presets ou custom) e divisão por pessoas. Demo local — este repo não tem GitHub Pages; rode na pasta tip-calculator/. Sem backend e sem URL pública.',
     stack: ['React', 'TypeScript', 'Vite'],
     category: 'frontend',
     github: 'https://github.com/dev-joaovictor/portfolio/tree/main/tip-calculator',
+    screenshot: '/tip-calculator.png',
     status: 'ready',
     highlights: [
       'Gorjeta e total a partir do valor da conta',
-      'Presets de % e valor customizado',
-      'Demo local — sem URL pública',
+      'Presets de % e valor customizado; divisão por pessoas',
+      'Demo: cd tip-calculator && npm install && npm run dev',
     ],
   },
   {

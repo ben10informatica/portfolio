@@ -57,6 +57,13 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <h3>{project.title}</h3>
       </div>
+      {project.screenshot && (
+        <img
+          className="project-shot"
+          src={project.screenshot}
+          alt={`Screenshot do ${project.title} em funcionamento`}
+        />
+      )}
       <p className="project-desc">{project.description}</p>
       <ul className="project-highlights">
         {project.highlights.map((h) => (
