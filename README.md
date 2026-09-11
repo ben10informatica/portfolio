@@ -10,6 +10,7 @@ Projetos para currículo, com foco em vagas remotas.
 |---------|------------|
 | Site / Currículo | ![site](site/docs/screenshot.png) |
 | TaskFlow API | ![taskflow](taskflow-api/docs/screenshot.png) |
+| Tip Calculator | ![tip](tip-calculator/docs/screenshot.png) |
 | AI Workspace | ![ai](ai-workspace/docs/screenshot.png) |
 | YouTube Dashboard | ![yt](youtube-dashboard/docs/screenshot.png) |
 
@@ -22,6 +23,7 @@ Projetos para currículo, com foco em vagas remotas.
 | TaskFlow API | API de tarefas com JWT, OpenAPI, testes e Docker — recorte backend de referência | [`taskflow-api/`](./taskflow-api/) |
 | TaskFlow Web | Frontend React da TaskFlow API (login + CRUD). Só local, precisa da API | [`taskflow-web/`](./taskflow-web/) |
 | ShortLink | Encurtador local: FastAPI + SQLite + UI React. Sem auth e sem deploy | [`shortlink/`](./shortlink/) |
+| Tip Calculator | Calculadora de gorjeta (React + TypeScript + Vite). Só local, sem backend | [`tip-calculator/`](./tip-calculator/) |
 | AI Workspace | Chat web com Groq (UI em HTML/CSS/JS) | [`ai-workspace/`](./ai-workspace/) |
 | YouTube Dashboard | Frontend React (backend Express ainda fora do monorepo) | [`youtube-dashboard/`](./youtube-dashboard/) |
 
@@ -32,9 +34,9 @@ git clone https://github.com/dev-joaovictor/portfolio.git
 cd portfolio
 ```
 
-Depois entre na pasta do projeto (`site`, `taskflow-api`, `taskflow-web`, `shortlink`, `ai-workspace` ou `youtube-dashboard`) e siga o README local. TaskFlow Web e ShortLink só funcionam com a API correspondente rodando na máquina.
+Depois entre na pasta do projeto (`site`, `taskflow-api`, `taskflow-web`, `shortlink`, `tip-calculator`, `ai-workspace` ou `youtube-dashboard`) e siga o README local. TaskFlow Web e ShortLink só funcionam com a API correspondente rodando na máquina. Tip Calculator roda sozinho.
 
-A TaskFlow API tem testes e CI na raiz do monorepo (`.github/workflows/taskflow-ci.yml`). ShortLink também (`pytest` em `shortlink/api`). TaskFlow Web e a UI do ShortLink têm `npm run build` no workflow `demos-ci.yml`.
+A TaskFlow API tem testes e CI na raiz do monorepo (`.github/workflows/taskflow-ci.yml`). ShortLink também (`pytest` em `shortlink/api`). TaskFlow Web, a UI do ShortLink e o Tip Calculator têm `npm run build` no workflow `demos-ci.yml`.
 
 ```bash
 cd taskflow-api

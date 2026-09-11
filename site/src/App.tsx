@@ -57,6 +57,13 @@ function ProjectCard({ project }: { project: Project }) {
         </div>
         <h3>{project.title}</h3>
       </div>
+      {project.screenshot && (
+        <img
+          className="project-shot"
+          src={project.screenshot}
+          alt={`Screenshot do ${project.title} em funcionamento`}
+        />
+      )}
       <p className="project-desc">{project.description}</p>
       <ul className="project-highlights">
         {project.highlights.map((h) => (
@@ -149,7 +156,8 @@ export default function App() {
         <h2>Projetos</h2>
         <p className="section-sub">
           TaskFlow (API + frontend local) é o recorte principal. ShortLink é um full-stack menor.
-          O dashboard do YouTube segue em evolução, sem backend neste repo.
+          Tip Calculator é um frontend local pequeno. O dashboard do YouTube segue em evolução,
+          sem backend neste repo.
         </p>
         {featured.length > 0 && (
           <div className="featured-grid">

@@ -1,0 +1,144 @@
+.app {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem 4rem;
+  display: grid;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+h1 {
+  font-size: clamp(1.6rem, 4vw, 2rem);
+  letter-spacing: -0.02em;
+  margin: 0.2rem 0 0.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 0.85rem;
+}
+
+.muted {
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.layout {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 720px) {
+  .layout {
+    grid-template-columns: 1.1fr 0.9fr;
+    align-items: start;
+  }
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+  display: grid;
+  gap: 0.85rem;
+}
+
+label,
+fieldset {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+  border: 0;
+}
+
+legend {
+  padding: 0;
+  margin-bottom: 0.35rem;
+}
+
+input {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+input:focus {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 1px;
+}
+
+input[aria-invalid='true'] {
+  border-color: var(--red);
+}
+
+.preset-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.preset-row button,
+.ghost {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem 0.8rem;
+  font-weight: 500;
+  font-size: 0.9rem;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.preset-row button.active {
+  background: var(--accent);
+  border-color: transparent;
+  color: white;
+}
+
+.ghost {
+  width: fit-content;
+}
+
+.form-error {
+  color: var(--red);
+  font-size: 0.85rem;
+}
+
+.results dl {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.results dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+}
+
+.results dt {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.results dd {
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.results .total {
+  color: var(--green);
+  font-size: 1.25rem;
+}

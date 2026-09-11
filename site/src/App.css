@@ -246,6 +246,13 @@
   font-size: 1.1rem;
 }
 
+.project-shot {
+  width: 100%;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  display: block;
+}
+
 .project-desc {
   color: var(--muted);
   font-size: 0.9rem;
