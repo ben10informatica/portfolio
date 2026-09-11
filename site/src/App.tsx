@@ -149,7 +149,8 @@ export default function App() {
         <h2>Projetos</h2>
         <p className="section-sub">
           TaskFlow (API + frontend local) é o recorte principal. ShortLink é um full-stack menor.
-          O dashboard do YouTube segue em evolução, sem backend neste repo.
+          Tip Calculator é um frontend local pequeno. O dashboard do YouTube segue em evolução,
+          sem backend neste repo.
         </p>
         {featured.length > 0 && (
           <div className="featured-grid">

@@ -59,6 +59,21 @@ export const projects: Project[] = [
     ],
   },
   {
+    id: 'tip-calculator',
+    title: 'Tip Calculator',
+    description:
+      'Calculadora de gorjeta em React + TypeScript + Vite: valor da conta, percentual (presets ou custom) e divisão por pessoas. Só local — sem backend e sem deploy.',
+    stack: ['React', 'TypeScript', 'Vite'],
+    category: 'frontend',
+    github: 'https://github.com/dev-joaovictor/portfolio/tree/main/tip-calculator',
+    status: 'ready',
+    highlights: [
+      'Gorjeta e total a partir do valor da conta',
+      'Presets de % e valor customizado',
+      'Demo local — sem URL pública',
+    ],
+  },
+  {
     id: 'curriculo-site',
     title: 'Site de Currículo',
     description:

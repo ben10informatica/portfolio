@@ -5,11 +5,13 @@ on:
     paths:
       - 'taskflow-web/**'
       - 'shortlink/**'
+      - 'tip-calculator/**'
       - '.github/workflows/demos-ci.yml'
   pull_request:
     paths:
       - 'taskflow-web/**'
       - 'shortlink/**'
+      - 'tip-calculator/**'
       - '.github/workflows/demos-ci.yml'
 
 jobs:
@@ -60,5 +62,20 @@ jobs:
           node-version: '22'
           cache: npm
           cache-dependency-path: shortlink/web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  tip-calculator:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: tip-calculator
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: tip-calculator/package-lock.json
       - run: npm ci
       - run: npm run build
