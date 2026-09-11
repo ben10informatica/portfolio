@@ -1,34 +1,26 @@
 # AI Workspace
 
-Assistente web de produtividade com chat inteligente integrado ao Groq LLM (gratuito).
+Chat web de produtividade com Groq (Llama).
 
 ## Stack
 
-- Python + FastAPI
-- Groq API (Llama 3.3)
-- Frontend HTML/CSS/JS
+Python · FastAPI · Groq · HTML/CSS/JS
 
 ## Como rodar
 
 ```bash
+python -m venv .venv
+source .venv/bin/activate
 pip install -r requirements.txt
-copy .env.example .env
-# Adicione sua GROQ_API_KEY em .env
+cp .env.example .env
+# coloque GROQ_API_KEY no .env
 uvicorn app.main:app --reload --port 8001
 ```
 
-Acesse `http://localhost:8001`
+Abra `http://localhost:8001`.
 
-## Funcionalidades
+## O que mostra no currículo
 
-- Chat com histórico de conversa
-- Sugestões de prompts prontos
-- Interface responsiva estilo workspace
-- API REST documentada em `/docs`
-
-## Destaques para currículo
-
-- Integração com LLM em produção
-- API async com FastAPI
-- UX de chat profissional
-- Configuração via variáveis de ambiente
+- Integração com LLM
+- API async
+- UI de chat

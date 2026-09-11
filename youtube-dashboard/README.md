@@ -1,26 +1,20 @@
 # YouTube Growth Dashboard
 
-Frontend React para um painel de crescimento de canal.
+Frontend React para painel de crescimento de canal.
 
 ## Stack
 
-- React + TypeScript
-- Vite
+React · TypeScript · Vite
 
-## Como rodar
+## Status
+
+Build OK. As chamadas de API esperam um backend em `http://localhost:3000` (ainda fora deste monorepo). Configure a URL em `src/api.ts` quando a API existir.
+
+## Como rodar (UI)
 
 ```bash
 npm install
 npm run dev
 ```
 
-Acesse `http://localhost:5174`.
-
-Se o dashboard precisar de API, configure a URL em `src/api.ts`.
-
-## Funcionalidades
-
-- Pesquisa de tendências
-- Geração de títulos e descrições
-- Ideias e scripts com IA
-- Métricas do canal
+`http://localhost:5174`

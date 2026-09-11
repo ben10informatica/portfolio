@@ -11,25 +11,28 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    id: 'youtube-dashboard',
-    title: 'YouTube Growth Dashboard',
+    id: 'curriculo-site',
+    title: 'Site de Currículo',
     description:
-      'Painel full-stack para crescimento de canal: tendências, métricas, concorrentes e geração de conteúdo com IA. Backend Express na raiz do workspace + frontend React.',
-    stack: ['TypeScript', 'React', 'Express', 'YouTube API', 'Groq'],
-    category: 'fullstack',
+      'Landing page com projetos, skills e contato. Feita em React + TypeScript e publicada no GitHub Pages.',
+    stack: ['React', 'TypeScript', 'Vite'],
+    category: 'frontend',
+    github: 'https://github.com/ben10informatica/curriculo',
+    demo: 'https://ben10informatica.github.io/curriculo/',
     highlights: [
-      'API REST com 12+ endpoints',
-      'Integração YouTube Data API v3',
-      'Títulos, scripts e ideias com LLM',
+      'Layout responsivo',
+      'Dados centralizados em TypeScript',
+      'Deploy automático com GitHub Pages',
     ],
   },
   {
     id: 'taskflow-api',
     title: 'TaskFlow API',
     description:
-      'API REST de tarefas com cadastro, login JWT, CRUD isolado por usuário, Swagger e Docker — o tipo de backend que empresas remotas pedem em teste técnico.',
+      'API REST de tarefas com cadastro, login JWT, CRUD por usuário, Swagger e Docker.',
     stack: ['Python', 'FastAPI', 'SQLAlchemy', 'JWT', 'Docker'],
     category: 'backend',
+    github: 'https://github.com/ben10informatica/portfolio/tree/main/taskflow-api',
     highlights: [
       'Auth JWT + OAuth2 password flow',
       'CRUD com isolamento por dono',
@@ -40,63 +43,52 @@ export const projects: Project[] = [
     id: 'ai-workspace',
     title: 'AI Workspace',
     description:
-      'Assistente web de produtividade: chat com histórico, prompts prontos e integração com Groq (Llama). Pensado para mostrar IA aplicada, não só um tutorial.',
+      'Assistente web de produtividade com chat, prompts prontos e integração Groq (Llama).',
     stack: ['Python', 'FastAPI', 'Groq', 'HTML/CSS/JS'],
     category: 'ai',
+    github: 'https://github.com/ben10informatica/portfolio/tree/main/ai-workspace',
     highlights: [
-      'Chat com contexto da conversa',
-      'LLM gratuito via Groq',
-      'Interface de workspace',
+      'Chat com histórico',
+      'LLM via Groq',
+      'Interface estilo workspace',
     ],
   },
   {
-    id: 'jarvis',
-    title: 'JARVIS Assistant',
+    id: 'youtube-dashboard',
+    title: 'YouTube Growth Dashboard',
     description:
-      'Assistente de voz no desktop: fala, escuta, abre apps e automatiza o PC. Projeto pessoal de automação com interface web embarcada.',
-    stack: ['Python', 'Eel', 'Edge-TTS', 'PyAutoGUI'],
-    category: 'ai',
+      'Frontend React para painel de tendências e ideias de conteúdo. Em evolução — a API Express ainda não está neste monorepo.',
+    stack: ['TypeScript', 'React', 'Vite'],
+    category: 'frontend',
+    github: 'https://github.com/ben10informatica/portfolio/tree/main/youtube-dashboard',
     highlights: [
-      'Síntese e comandos de voz',
-      'Registro de aplicativos',
-      'Controle de mouse/teclado',
-    ],
-  },
-  {
-    id: 'discord-bot',
-    title: 'Bot Discord + IA',
-    description:
-      'Bot com memória persistente, reconhecimento de voz e respostas via LLM. Útil para mostrar integração de APIs e bots em produção informal.',
-    stack: ['Python', 'SpeechRecognition', 'Anthropic', 'edge-tts'],
-    category: 'backend',
-    highlights: [
-      'Memória em JSON',
-      'Voz + texto',
-      'Integração com LLM',
+      'UI com tabs e estados de loading',
+      'Proxy Vite para API local',
+      'Pronto para plugar backend',
     ],
   },
 ];
 
 export const skills = {
   frontend: ['React', 'TypeScript', 'Vite', 'HTML/CSS', 'UI responsiva'],
-  backend: ['Node.js', 'Express', 'Python', 'FastAPI', 'REST APIs'],
-  database: ['SQLite', 'SQLAlchemy', 'JSON persistente'],
-  devops: ['Docker', 'GitHub Actions', 'Vercel / Railway'],
-  ia: ['Groq', 'OpenAI API', 'Anthropic', 'Prompt engineering'],
-  ferramentas: ['Git', 'Cursor', 'Windows', 'APIs externas'],
+  backend: ['Python', 'FastAPI', 'REST APIs', 'JWT'],
+  database: ['SQLite', 'SQLAlchemy'],
+  devops: ['Docker', 'GitHub Actions', 'GitHub Pages'],
+  ia: ['Groq', 'Prompt engineering'],
+  ferramentas: ['Git', 'Cursor', 'Windows'],
 };
 
 export const profile = {
   name: 'João Victor',
   initials: 'JV',
   role: 'Desenvolvedor Full-Stack · aberto a remoto',
-  bio: 'Construo APIs, dashboards e automações com IA. Estou montando um portfólio para vagas home office, com projetos em TypeScript/React e Python/FastAPI.',
+  bio: 'Construo APIs, dashboards e automações com IA. Portfólio focado em vagas home office, com React/TypeScript e Python/FastAPI.',
   about: [
-    'Trabalho com TypeScript (Express, React) e Python (FastAPI, automação e voz).',
-    'Gosto de produtos completos: da API documentada até a interface que o usuário usa.',
+    'Trabalho com TypeScript (React) e Python (FastAPI).',
+    'Gosto de produtos completos: da API documentada até a interface.',
     'Busco vaga remota para crescer em time, com código limpo e entrega constante.',
   ],
-  email: '',
+  email: 'ben10informatica@gmail.com',
   github: 'https://github.com/ben10informatica',
   linkedin: '',
   location: 'Brasil · 100% remoto',

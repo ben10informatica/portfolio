@@ -2,14 +2,16 @@
 
 Projetos para currículo, com foco em vagas remotas.
 
+**Currículo ao vivo:** https://ben10informatica.github.io/curriculo/
+
 ## O que tem aqui
 
 | Projeto | O que é | Pasta |
 |---------|---------|-------|
-| Site | Landing page em React + TypeScript + Vite | [`site/`](./site/) |
+| Site | Landing React + TypeScript + Vite | [`site/`](./site/) |
 | TaskFlow API | API de tarefas com JWT, Swagger e Docker | [`taskflow-api/`](./taskflow-api/) |
-| AI Workspace | Chat web com Groq (Llama) | [`ai-workspace/`](./ai-workspace/) |
-| YouTube Dashboard | Painel React para métricas e ideias de conteúdo | [`youtube-dashboard/`](./youtube-dashboard/) |
+| AI Workspace | Chat web com Groq | [`ai-workspace/`](./ai-workspace/) |
+| YouTube Dashboard | Frontend React (API externa ainda pendente) | [`youtube-dashboard/`](./youtube-dashboard/) |
 
 ## Como rodar
 
@@ -18,43 +20,11 @@ git clone https://github.com/ben10informatica/portfolio.git
 cd portfolio
 ```
 
-**Site**
-
-```bash
-cd site
-npm install
-npm run dev
-```
-
-**TaskFlow API**
-
-```bash
-cd taskflow-api
-cp .env.example .env
-pip install -r requirements.txt
-uvicorn app.main:app --reload
-```
-
-**AI Workspace**
-
-```bash
-cd ai-workspace
-cp .env.example .env
-pip install -r requirements.txt
-uvicorn app.main:app --reload --port 8001
-```
-
-**YouTube Dashboard**
-
-```bash
-cd youtube-dashboard
-npm install
-npm run dev
-```
-
-Cada pasta tem o próprio README com mais detalhe.
+Depois entre na pasta do projeto (`site`, `taskflow-api`, `ai-workspace` ou `youtube-dashboard`) e siga o README local.
 
 ## Contato
 
-- GitHub: [ben10informatica](https://github.com/ben10informatica)
-- Currículo: [curriculo](https://github.com/ben10informatica/curriculo)
+- Site: https://ben10informatica.github.io/curriculo/
+- GitHub: https://github.com/ben10informatica
+- E-mail: ben10informatica@gmail.com
+- Currículo (repo): https://github.com/ben10informatica/curriculo
