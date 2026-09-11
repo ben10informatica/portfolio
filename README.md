@@ -36,5 +36,6 @@ Depois entre na pasta do projeto (`site`, `taskflow-api`, `ai-workspace` ou `you
 
 - Site: https://ben10informatica.github.io/curriculo/
 - GitHub: https://github.com/ben10informatica
+- LinkedIn: https://www.linkedin.com/in/joaovictor84
 - E-mail: ben10informatica@gmail.com
 - Currículo (repo): https://github.com/ben10informatica/curriculo

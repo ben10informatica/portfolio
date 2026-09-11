@@ -90,6 +90,6 @@ export const profile = {
   ],
   email: 'ben10informatica@gmail.com',
   github: 'https://github.com/ben10informatica',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/joaovictor84',
   location: 'Brasil · 100% remoto',
 };
