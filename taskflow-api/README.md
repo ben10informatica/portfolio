@@ -2,6 +2,8 @@
 
 API REST de tarefas com autenticação JWT, Swagger e Docker.
 
+![Screenshot do Swagger](docs/screenshot.png)
+
 ## Stack
 
 Python · FastAPI · SQLAlchemy · SQLite · JWT · Docker

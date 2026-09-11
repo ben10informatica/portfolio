@@ -2,6 +2,8 @@
 
 Chat web de produtividade com Groq (Llama).
 
+![Screenshot do AI Workspace](docs/screenshot.png)
+
 ## Stack
 
 Python · FastAPI · Groq · HTML/CSS/JS

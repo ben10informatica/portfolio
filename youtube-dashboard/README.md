@@ -2,6 +2,8 @@
 
 Frontend React para painel de crescimento de canal.
 
+![Screenshot do dashboard](docs/screenshot.png)
+
 ## Stack
 
 React · TypeScript · Vite

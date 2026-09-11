@@ -1,7 +1,10 @@
 # Site Portfólio — João Victor
 
-Landing em React + TypeScript. A versão publicada do currículo vive em:
+Landing em React + TypeScript.
 
+![Screenshot do site](docs/screenshot.png)
+
+Versão publicada do currículo:
 https://github.com/ben10informatica/curriculo  
 https://ben10informatica.github.io/curriculo/
 
