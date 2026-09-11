@@ -1,4 +1,4 @@
-import { projects, skills, profile } from './data/projects';
+import { projects, skills, profile, type Project } from './data/projects';
 import './App.css';
 
 const categoryLabels: Record<string, string> = {
@@ -24,13 +24,82 @@ const skillLabels: Record<string, string> = {
   ferramentas: 'Ferramentas',
 };
 
+const statusLabels: Record<NonNullable<Project['status']>, string> = {
+  ready: 'Pronto para demo',
+  wip: 'Em evolução',
+};
+
+function ProjectCard({ project }: { project: Project }) {
+  const isFeatured = Boolean(project.featured);
+
+  return (
+    <article
+      id={project.id}
+      className={`project-card${isFeatured ? ' featured' : ''}`}
+    >
+      <div className="project-header">
+        <div className="project-badges">
+          <span
+            className="project-category"
+            style={{
+              color: categoryColors[project.category],
+              borderColor: categoryColors[project.category],
+            }}
+          >
+            {categoryLabels[project.category]}
+          </span>
+          {isFeatured && <span className="project-featured-label">Destaque</span>}
+          {project.status && (
+            <span className={`project-status status-${project.status}`}>
+              {statusLabels[project.status]}
+            </span>
+          )}
+        </div>
+        <h3>{project.title}</h3>
+      </div>
+      <p className="project-desc">{project.description}</p>
+      <ul className="project-highlights">
+        {project.highlights.map((h) => (
+          <li key={h}>{h}</li>
+        ))}
+      </ul>
+      <div className="project-stack">
+        {project.stack.map((tech) => (
+          <span key={tech} className="tech-tag">
+            {tech}
+          </span>
+        ))}
+      </div>
+      {(project.github || project.demo) && (
+        <div className="project-links">
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noreferrer">
+              GitHub →
+            </a>
+          )}
+          {project.demo && (
+            <a href={project.demo} target="_blank" rel="noreferrer">
+              Demo live →
+            </a>
+          )}
+        </div>
+      )}
+    </article>
+  );
+}
+
 export default function App() {
   const hasGithub = Boolean(profile.github);
   const hasLinkedin = Boolean(profile.linkedin);
   const hasEmail = Boolean(profile.email);
+  const featured = projects.filter((project) => project.featured);
+  const rest = projects.filter((project) => !project.featured);
 
   return (
     <div className="app">
+      <a className="skip-link" href="#sobre">
+        Ir para o conteúdo
+      </a>
       <nav className="nav">
         <span className="nav-logo">{profile.initials}</span>
         <div className="nav-links">
@@ -42,13 +111,16 @@ export default function App() {
       </nav>
 
       <header className="hero">
-        <p className="hero-badge">Disponível para home office</p>
+        <p className="hero-badge">Aberto a estágio e júnior remoto</p>
         <h1>{profile.name}</h1>
         <p className="hero-role">{profile.role}</p>
         <p className="hero-bio">{profile.bio}</p>
         <div className="hero-actions">
-          <a href="#projetos" className="btn btn-primary">
-            Ver projetos
+          <a href="#taskflow-api" className="btn btn-primary">
+            Ver TaskFlow API
+          </a>
+          <a href="#projetos" className="btn btn-secondary">
+            Todos os projetos
           </a>
           {hasGithub && (
             <a href={profile.github} target="_blank" rel="noreferrer" className="btn btn-secondary">
@@ -58,11 +130,6 @@ export default function App() {
           {hasLinkedin && (
             <a href={profile.linkedin} target="_blank" rel="noreferrer" className="btn btn-secondary">
               LinkedIn
-            </a>
-          )}
-          {hasEmail && (
-            <a href={`mailto:${profile.email}`} className="btn btn-secondary">
-              E-mail
             </a>
           )}
         </div>
@@ -80,50 +147,20 @@ export default function App() {
 
       <section id="projetos" className="section">
         <h2>Projetos</h2>
-        <p className="section-sub">Stack variada — full-stack, backend, IA e automação</p>
+        <p className="section-sub">
+          TaskFlow é o recorte backend mais completo. Os demais mostram frontend, um workspace de IA
+          em HTML/JS e um dashboard ainda em evolução.
+        </p>
+        {featured.length > 0 && (
+          <div className="featured-grid">
+            {featured.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </div>
+        )}
         <div className="projects-grid">
-          {projects.map((project) => (
-            <article key={project.id} className="project-card">
-              <div className="project-header">
-                <span
-                  className="project-category"
-                  style={{
-                    color: categoryColors[project.category],
-                    borderColor: categoryColors[project.category],
-                  }}
-                >
-                  {categoryLabels[project.category]}
-                </span>
-                <h3>{project.title}</h3>
-              </div>
-              <p className="project-desc">{project.description}</p>
-              <ul className="project-highlights">
-                {project.highlights.map((h) => (
-                  <li key={h}>{h}</li>
-                ))}
-              </ul>
-              <div className="project-stack">
-                {project.stack.map((tech) => (
-                  <span key={tech} className="tech-tag">
-                    {tech}
-                  </span>
-                ))}
-              </div>
-              {(project.github || project.demo) && (
-                <div className="project-links">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noreferrer">
-                      GitHub →
-                    </a>
-                  )}
-                  {project.demo && (
-                    <a href={project.demo} target="_blank" rel="noreferrer">
-                      Demo live →
-                    </a>
-                  )}
-                </div>
-              )}
-            </article>
+          {rest.map((project) => (
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </section>
@@ -148,7 +185,7 @@ export default function App() {
 
       <section id="contato" className="section contact">
         <h2>Contato</h2>
-        <p>Aberto a vagas remotas, freelas e conversas sobre os projetos acima.</p>
+        <p>Aberto a estágio e vaga júnior remota — e a conversas sobre os projetos acima.</p>
         <div className="contact-links">
           {hasEmail && (
             <a href={`mailto:${profile.email}`} className="btn btn-primary">
