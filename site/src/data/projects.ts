@@ -17,8 +17,8 @@ export const projects: Project[] = [
       'Landing page com projetos, skills e contato. Feita em React + TypeScript e publicada no GitHub Pages.',
     stack: ['React', 'TypeScript', 'Vite'],
     category: 'frontend',
-    github: 'https://github.com/ben10informatica/curriculo',
-    demo: 'https://ben10informatica.github.io/curriculo/',
+    github: 'https://github.com/dev-joaovictor/curriculo',
+    demo: 'https://dev-joaovictor.github.io/curriculo/',
     highlights: [
       'Layout responsivo',
       'Dados centralizados em TypeScript',
@@ -32,7 +32,7 @@ export const projects: Project[] = [
       'API REST de tarefas com cadastro, login JWT, CRUD por usuário, Swagger e Docker.',
     stack: ['Python', 'FastAPI', 'SQLAlchemy', 'JWT', 'Docker'],
     category: 'backend',
-    github: 'https://github.com/ben10informatica/portfolio/tree/main/taskflow-api',
+    github: 'https://github.com/dev-joaovictor/portfolio/tree/main/taskflow-api',
     highlights: [
       'Auth JWT + OAuth2 password flow',
       'CRUD com isolamento por dono',
@@ -46,7 +46,7 @@ export const projects: Project[] = [
       'Assistente web de produtividade com chat, prompts prontos e integração Groq (Llama).',
     stack: ['Python', 'FastAPI', 'Groq', 'HTML/CSS/JS'],
     category: 'ai',
-    github: 'https://github.com/ben10informatica/portfolio/tree/main/ai-workspace',
+    github: 'https://github.com/dev-joaovictor/portfolio/tree/main/ai-workspace',
     highlights: [
       'Chat com histórico',
       'LLM via Groq',
@@ -60,7 +60,7 @@ export const projects: Project[] = [
       'Frontend React para painel de tendências e ideias de conteúdo. Em evolução — a API Express ainda não está neste monorepo.',
     stack: ['TypeScript', 'React', 'Vite'],
     category: 'frontend',
-    github: 'https://github.com/ben10informatica/portfolio/tree/main/youtube-dashboard',
+    github: 'https://github.com/dev-joaovictor/portfolio/tree/main/youtube-dashboard',
     highlights: [
       'UI com tabs e estados de loading',
       'Proxy Vite para API local',
@@ -88,8 +88,8 @@ export const profile = {
     'Gosto de produtos completos: da API documentada até a interface.',
     'Busco vaga remota para crescer em time, com código limpo e entrega constante.',
   ],
-  email: 'ben10informatica@gmail.com',
-  github: 'https://github.com/ben10informatica',
+  email: 'dev-joaovictor@gmail.com',
+  github: 'https://github.com/dev-joaovictor',
   linkedin: 'https://www.linkedin.com/in/joaovictor84',
   location: 'Brasil · 100% remoto',
 };

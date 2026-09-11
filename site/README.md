@@ -5,8 +5,8 @@ Landing em React + TypeScript.
 ![Screenshot do site](docs/screenshot.png)
 
 Versão publicada do currículo:
-https://github.com/ben10informatica/curriculo  
-https://ben10informatica.github.io/curriculo/
+https://github.com/dev-joaovictor/curriculo  
+https://dev-joaovictor.github.io/curriculo/
 
 ## Rodar
 
