@@ -9,6 +9,13 @@ from app.schemas import TaskCreate, TaskResponse, TaskUpdate
 router = APIRouter(prefix="/tasks", tags=["Tarefas"])
 
 
+def get_owned_task(task_id: int, db: Session, current_user: User) -> Task:
+    task = db.query(Task).filter(Task.id == task_id, Task.owner_id == current_user.id).first()
+    if not task:
+        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Tarefa não encontrada")
+    return task
+
+
 @router.get("", response_model=list[TaskResponse])
 def list_tasks(
     completed: bool | None = None,
@@ -40,10 +47,7 @@ def get_task(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    task = db.query(Task).filter(Task.id == task_id, Task.owner_id == current_user.id).first()
-    if not task:
-        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
-    return task
+    return get_owned_task(task_id, db, current_user)
 
 
 @router.patch("/{task_id}", response_model=TaskResponse)
@@ -53,9 +57,7 @@ def update_task(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    task = db.query(Task).filter(Task.id == task_id, Task.owner_id == current_user.id).first()
-    if not task:
-        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
+    task = get_owned_task(task_id, db, current_user)
 
     for field, value in task_in.model_dump(exclude_unset=True).items():
         setattr(task, field, value)
@@ -71,9 +73,6 @@ def delete_task(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user),
 ):
-    task = db.query(Task).filter(Task.id == task_id, Task.owner_id == current_user.id).first()
-    if not task:
-        raise HTTPException(status_code=404, detail="Tarefa não encontrada")
-
+    task = get_owned_task(task_id, db, current_user)
     db.delete(task)
     db.commit()

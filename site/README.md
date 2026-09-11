@@ -1,6 +1,6 @@
 # Site Portfólio — João Victor
 
-Landing em React + TypeScript.
+Landing em React + TypeScript. TaskFlow aparece em destaque; os cards descrevem stack e status reais (o dashboard do YouTube segue como frontend em evolução).
 
 ![Screenshot do site](docs/screenshot.png)
 
@@ -15,4 +15,4 @@ npm install
 npm run dev
 ```
 
-Dados em `src/data/projects.ts`.
+Dados em `src/data/projects.ts`. Para build de verificação: `npm run build`.

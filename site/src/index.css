@@ -41,3 +41,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+}

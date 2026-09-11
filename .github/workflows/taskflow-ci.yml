@@ -1,0 +1,41 @@
+name: TaskFlow CI
+
+# GitHub só executa workflows em `/.github/workflows` na raiz do repo.
+# O arquivo antigo em `taskflow-api/.github/` não disparava; os path filters
+# apontavam para `portfolio/taskflow-api/**`, que não existe neste monorepo.
+
+on:
+  push:
+    paths:
+      - 'taskflow-api/**'
+      - '.github/workflows/taskflow-ci.yml'
+  pull_request:
+    paths:
+      - 'taskflow-api/**'
+      - '.github/workflows/taskflow-ci.yml'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: taskflow-api
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+
+      - name: Run tests
+        run: pytest -q
+
+      - name: Health smoke check
+        run: |
+          uvicorn app.main:app --host 127.0.0.1 --port 8000 &
+          sleep 3
+          curl -f http://127.0.0.1:8000/health
