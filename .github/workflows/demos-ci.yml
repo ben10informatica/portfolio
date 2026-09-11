@@ -1,0 +1,64 @@
+name: Demos CI
+
+on:
+  push:
+    paths:
+      - 'taskflow-web/**'
+      - 'shortlink/**'
+      - '.github/workflows/demos-ci.yml'
+  pull_request:
+    paths:
+      - 'taskflow-web/**'
+      - 'shortlink/**'
+      - '.github/workflows/demos-ci.yml'
+
+jobs:
+  shortlink-api:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: shortlink/api
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt
+      - name: Run tests
+        run: pytest -q
+      - name: Health smoke check
+        run: |
+          uvicorn app.main:app --host 127.0.0.1 --port 8002 &
+          sleep 3
+          curl -f http://127.0.0.1:8002/health
+
+  taskflow-web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: taskflow-web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: taskflow-web/package-lock.json
+      - run: npm ci
+      - run: npm run build
+
+  shortlink-web:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: shortlink/web
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: shortlink/web/package-lock.json
+      - run: npm ci
+      - run: npm run build

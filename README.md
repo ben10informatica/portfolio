@@ -20,6 +20,8 @@ Projetos para currículo, com foco em vagas remotas.
 |---------|---------|-------|
 | Site | Landing React + TypeScript + Vite (TaskFlow em destaque) | [`site/`](./site/) |
 | TaskFlow API | API de tarefas com JWT, OpenAPI, testes e Docker — recorte backend de referência | [`taskflow-api/`](./taskflow-api/) |
+| TaskFlow Web | Frontend React da TaskFlow API (login + CRUD). Só local, precisa da API | [`taskflow-web/`](./taskflow-web/) |
+| ShortLink | Encurtador local: FastAPI + SQLite + UI React. Sem auth e sem deploy | [`shortlink/`](./shortlink/) |
 | AI Workspace | Chat web com Groq (UI em HTML/CSS/JS) | [`ai-workspace/`](./ai-workspace/) |
 | YouTube Dashboard | Frontend React (backend Express ainda fora do monorepo) | [`youtube-dashboard/`](./youtube-dashboard/) |
 
@@ -30,12 +32,16 @@ git clone https://github.com/dev-joaovictor/portfolio.git
 cd portfolio
 ```
 
-Depois entre na pasta do projeto (`site`, `taskflow-api`, `ai-workspace` ou `youtube-dashboard`) e siga o README local.
+Depois entre na pasta do projeto (`site`, `taskflow-api`, `taskflow-web`, `shortlink`, `ai-workspace` ou `youtube-dashboard`) e siga o README local. TaskFlow Web e ShortLink só funcionam com a API correspondente rodando na máquina.
 
-A TaskFlow API tem testes e CI na raiz do monorepo (`.github/workflows/taskflow-ci.yml`):
+A TaskFlow API tem testes e CI na raiz do monorepo (`.github/workflows/taskflow-ci.yml`). ShortLink também (`pytest` em `shortlink/api`). TaskFlow Web e a UI do ShortLink têm `npm run build` no workflow `demos-ci.yml`.
 
 ```bash
 cd taskflow-api
+pip install -r requirements-dev.txt
+pytest
+
+cd ../shortlink/api
 pip install -r requirements-dev.txt
 pytest
 ```
